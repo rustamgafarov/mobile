@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    text-transform: uppercase;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: rgb(0, 0, 0);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px 400px 250px 250px 150px;
+    grid-template-areas: "header menu menu menu" "hero hero hero hero" "main main pusto image" "main main pusto extra" "banner banner banner banner";
+}
+
+.container > * {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.header {
+    background-color: rgb(230, 203, 168);
+    grid-area: header;
+}
+
+.menu {
+    background-color: blanchedalmond;
+    grid-area: menu;
+}
+
+.hero {
+    background-color: burlywood;
+    grid-area: hero;
+}
+
+.main {
+    background-color: darkcyan;
+    grid-area: main;
+}
+
+.image{
+background-color: darksalmon;
+grid-area: image;
+}
+
+.extra{
+background-color: khaki;
+grid-area: extra;
+}
+
+.pusto{
+    background-color: lightblue;
+    grid-area: pusto;
+}
+
+.banner{
+    background-color: rgb(250, 235, 100);
+    grid-area: banner;
+    }
+
+
+@media (max-width: 550px){
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:"head" "menu" "hero" "main" "banner" "extra" "image";
+        grid-template-rows: 150px 150px 300px 300px 250px 250px 250px;
+  }
+}
+@media (max-width:768px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 150px 300px 300px 200px 200px;
+        grid-template-areas: "head head head head" "hero hero hero hero" "menu main main main" "menu banner banner banner" "menu extra extra image";
+        }
+    }
